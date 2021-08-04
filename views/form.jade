@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    header 
+        h1= 'Message Board'
+        p= 'speak your mind freely'
+    main
+        section.form-container 
+            form(method='POST' action='/new')
+                input(type='text', placeholder='Title' name='title' id='title')
+                textarea(name='description' placeholder='Pineapples belong on pizza and nobody can tell me otherwise!' cols='30' )
+                input(type='text' placeholder='Username' name='username' id='username')
+                button(type='submit' id='submit-btn')= 'post'

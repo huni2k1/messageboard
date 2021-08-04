@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  header 
+    h1= 'Message Board'
+    p= 'speak your mind freely'
+  main
+    .button-container
+      a(href='/new'): button.compose= "got something to say?"
+    each message in messages 
+      section.message-card 
+        h2= message.title
+        p.description= message.description
+        footer 
+          p.username= message.username
+          p.date= message.date
